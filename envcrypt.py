@@ -17,6 +17,7 @@ import sys
 
 from docopt import docopt
 
+
 def main(argv):
     opts = docopt(__doc__, argv=argv[1:])
     path = argv[1]

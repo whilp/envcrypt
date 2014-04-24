@@ -19,9 +19,11 @@ from docopt import docopt
 
 
 def main(argv):
-    opts = docopt(__doc__, argv=argv[1:])
-    path = argv[1]
-    command = argv[2:]
+    # Set options_first=True in case argv is eg:
+    #  [ "/bin/sh", "-c", "echo sorry" ]
+    opts = docopt(__doc__, argv=argv[1:], options_first=True)
+    path = opts["PATH"]
+    command = opts["COMMAND"]
 
     data = decrypt(path)
     env = dict(parse(data))

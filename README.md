@@ -13,9 +13,8 @@ Arguments:
                 `gpg -d PATH`
     COMMAND     command to be invoked in the context of the
                 environment defined in PATH
-
-echo AWS_ACCESS_KEY_ID=XXXXXXX | gpg -a -e aws.asc
-envcrypt aws.asc /bin/sh -c 'echo $AWS_ACCESS_KEY_ID'
+$ echo AWS_ACCESS_KEY_ID=XXXXXXX | gpg -a -e aws.asc
+$ envcrypt aws.asc /bin/sh -c 'echo $AWS_ACCESS_KEY_ID'
 XXXXXXXX
 ```
 

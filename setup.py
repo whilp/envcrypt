@@ -8,11 +8,9 @@ meta = dict(
     author_email='will@simple.com',
     test_suite='tests',
     scripts=['scripts/envcrypt'],
-    # entry_points=dict(
-    #     console_scripts=[
-    #         "envcrypt = envcrypt:run"
-    #     ]
-    # ),
+    install_requires=[
+        "docopt"
+    ],
 )
 
 setup(**meta)

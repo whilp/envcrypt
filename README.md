@@ -11,7 +11,7 @@ XXXXXXXX
 ## Install
 
 ```
-python setup.py install
+pip install .
 ```
 
 ## Test

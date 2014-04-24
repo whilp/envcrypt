@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Usage: envcrypt PATH COMMAND
+"""Usage: envcrypt PATH COMMAND...
 
 Set environment variables defined in encrypted file PATH and run COMMAND.
 

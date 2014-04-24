@@ -4,8 +4,10 @@
 Set environment variables defined in encrypted file PATH and run COMMAND.
 
 Arguments:
-    PATH        path to a gpg-encrypted file that can be read with eg `gpg -d PATH`
-    COMMAND     command to be invoked in the context of the environment defined in PATH
+    PATH        path to a gpg-encrypted file that can be read with eg
+                `gpg -d PATH`
+    COMMAND     command to be invoked in the context of the
+                environment defined in PATH
 """
 
 import collections

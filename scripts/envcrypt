@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import envcrypt
+import sys
+
+sys.exit(envcrypt.main(sys.argv))

@@ -26,7 +26,9 @@ def main(argv):
     command = opts["COMMAND"]
 
     data = decrypt(path)
-    env = dict(parse(data))
+    env = os.environ.copy()
+    env.update(parse(data))
+
     os.execvpe(command[0], command, env)
 
 

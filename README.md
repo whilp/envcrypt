@@ -27,3 +27,7 @@ go get github.com/whilp/envcrypt
 ```
 make test
 ```
+
+## License
+
+BSD; see `LICENSE`.

@@ -53,8 +53,11 @@ func usage() {
 func main() {
 	flag.Usage = usage
 	flag.Parse()
-
 	args := flag.Args()
+	if len(args) < 2 {
+		usage()
+	}
+	
 	path := args[0]
 	command := args[1:]
 	env := []string{}

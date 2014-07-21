@@ -34,6 +34,7 @@ func parse(data []byte) ([]string, error) {
 // Stdout and stderr are preserved.
 func run(command []string, env []string) (error) {
 	cmd := exec.Command(command[0], command[1:]...)
+	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Env = env

@@ -11,3 +11,11 @@ func TestParseOK(t *testing.T) {
 		t.Errorf("")
 	}
 }
+
+func TestParseSpaces(t *testing.T) {
+	in := []byte("FOO=bar baz\n")
+	out := []string{"FOO=bar baz"}
+	if result, _ := parse(in); result[0] != out[0] {
+		t.Errorf("")
+	}
+}

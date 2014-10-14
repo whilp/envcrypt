@@ -25,9 +25,17 @@ func decrypt(path string) ([]byte, error) {
 	return out, nil
 }
 
+func isNewLine(r rune) bool {
+	switch r {
+	case '\n':
+		return true
+	}
+	return false
+}
+
 // The parse function splits a byte array on whitespace.
 func parse(data []byte) ([]string, error) {
-	return strings.Fields(string(data)), nil
+	return strings.FieldsFunc(string(data), isNewLine), nil
 }
 
 // The run function runs a command in an environment.

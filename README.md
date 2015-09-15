@@ -27,6 +27,23 @@ XXXXXXXX
 
 ## Install
 
+Supported platforms:
+
+- [OSX](https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64)
+
+```console
+$ wget https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64
+$ wget https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64.sha256
+$ shasum -c envcrypt-Darwin-x86_64.sha256
+envcrypt-Darwin-x86_64: OK
+$ mv envcrypt-Darwin-x86_64 ~/bin/envcrypt
+$ chmod a+x ~/bin/envcrypt
+```
+
+## Install from source
+
+You can also install directly from source:
+
 ```
 go get github.com/whilp/envcrypt
 ```

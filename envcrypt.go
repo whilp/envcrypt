@@ -13,6 +13,11 @@ import (
 	"strings"
 )
 
+var (
+	version     string // this is set at build/install time; see Makefile
+	flagVersion = flag.Bool("v", false, "print program version")
+)
+
 // The decrypt function uses gpg to open and decrypt a file.
 // Stdout is captured for later parsing, but stderr is allowed to pass through.
 func decrypt(path string) ([]byte, error) {
@@ -40,7 +45,7 @@ func parse(data []byte) ([]string, error) {
 
 // The run function runs a command in an environment.
 // Stdout and stderr are preserved.
-func run(command []string, env []string) (error) {
+func run(command []string, env []string) error {
 	cmd := exec.Command(command[0], command[1:]...)
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
@@ -53,6 +58,7 @@ func usage() {
 	self := path.Base(os.Args[0])
 	fmt.Fprintf(os.Stderr, "usage: %s PATH COMMAND [ARGS...]\n\n", self)
 	fmt.Fprint(os.Stderr, "Set environment variables defined in encrypted file PATH and run COMMAND.\n\n")
+	fmt.Fprintln(os.Stderr, "  -v       print program version")
 	fmt.Fprintln(os.Stderr, "Arguments:")
 	fmt.Fprintln(os.Stderr, "  PATH     path to a gpg-encrypted file that can be read with eg `gpg -d PATH`")
 	fmt.Fprintln(os.Stderr, "  COMMAND  command to be invoked in the context of the environment defined in PATH")
@@ -63,10 +69,15 @@ func main() {
 	flag.Usage = usage
 	flag.Parse()
 	args := flag.Args()
+	if *flagVersion {
+		fmt.Fprintln(os.Stdout, version)
+		os.Exit(0)
+	}
+
 	if len(args) < 2 {
 		usage()
 	}
-	
+
 	path := args[0]
 	command := args[1:]
 	env := []string{}

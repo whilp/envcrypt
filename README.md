@@ -32,13 +32,15 @@ This is the easy way; do this unless you definitely need to [build from source](
 - [OSX](https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64)
 
 ```console
-$ wget https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64
-$ wget https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64.sha256
+$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64
+$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64.sha265
 $ shasum -c envcrypt-Darwin-x86_64.sha256
 envcrypt-Darwin-x86_64: OK
 $ mv envcrypt-Darwin-x86_64 ~/bin/envcrypt
 $ chmod a+x ~/bin/envcrypt
 ```
+
+Make sure `~/bin` is a directory in your `$PATH`; replace it with another directory if you'd prefer.
 
 ## Install from source <a id="source" />
 

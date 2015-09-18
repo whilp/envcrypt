@@ -16,7 +16,7 @@ Arguments:
 The contents of `PATH` should be zero or more lines of string keys and values, separated by `=` and encrypted with GPG:
 
 ```
-$ echo AWS_ACCESS_KEY_ID=XXXXXXX | gpg -a -e aws.asc
+$ echo AWS_ACCESS_KEY_ID=XXXXXXX | gpg -a -e -o aws.asc
 $ envcrypt aws.asc /bin/sh -c 'echo $AWS_ACCESS_KEY_ID'
 XXXXXXXX
 ```

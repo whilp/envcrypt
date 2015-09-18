@@ -27,7 +27,7 @@ XXXXXXXX
 
 ## Install <a id="install" />
 
-This is the easy way; do this unless you definitely need to [build from source][#source]. Supported platforms:
+This is the easy way; do this unless you definitely need to [build from source](#source). Supported platforms:
 
 - [OSX](https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64)
 
@@ -42,7 +42,7 @@ $ chmod a+x ~/bin/envcrypt
 
 ## Install from source <a id="source" />
 
-You can also install directly from source (but you probably just want to [install the binary][#install]):
+You can also install directly from source (but you probably just want to [install the binary]()#install)]):
 
 ```
 go get github.com/whilp/envcrypt

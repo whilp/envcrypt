@@ -44,7 +44,7 @@ Make sure `~/bin` is a directory in your `$PATH`; replace it with another direct
 
 ## Install from source <a id="source" />
 
-You can also install directly from source (but you probably just want to [install the binary](#install)]):
+You can also install directly from source (but you probably just want to [install the binary](#install)):
 
 ```
 go get github.com/whilp/envcrypt

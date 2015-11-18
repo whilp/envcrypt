@@ -25,7 +25,7 @@ XXXXXXXX
 
 `envcrypt` runs `gpg` in batch mode, so you must be running `gpg-agent` for your private key to be accessible. Make sure you have `use-agent` set in your `~/.gnupg/gpg.conf`. If you're using Mac OS X, see [gpgagent](https://github.com/whilp/dotfiles/blob/master/bin/gpgagent) for an example agent-spawning script that makes use of the [GPG Tools](https://gpgtools.org/) version of `gpg-agent`.
 
-## Install <a id="install" />
+## Install
 
 This is the easy way; do this unless you definitely need to [build from source](#source). Supported platforms:
 
@@ -44,7 +44,7 @@ Make sure `~/bin` is a directory in your `$PATH`; replace it with another direct
 
 ## Install from source <a id="source" />
 
-You can also install directly from source (but you probably just want to [install the binary]()#install)]):
+You can also install directly from source (but you probably just want to [install the binary](#install)):
 
 ```
 go get github.com/whilp/envcrypt

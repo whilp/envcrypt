@@ -23,17 +23,40 @@ XXXXXXXX
 
 ## Prerequisites
 
-`envcrypt` runs `gpg` in batch mode, so you must be running `gpg-agent` for your private key to be accessible. Make sure you have `use-agent` set in your `~/.gnupg/gpg.conf`. If you're using Mac OS X, see [gpgagent](https://github.com/whilp/dotfiles/blob/master/bin/gpgagent) for an example agent-spawning script that makes use of the [GPG Tools](https://gpgtools.org/) version of `gpg-agent`.
+`envcrypt` runs `gpg` in batch mode, so you must be running `gpg-agent` for your private key to be accessible.
+
+### OSX
+
+Make sure your `gpg` and `gpg-agent` executables are version 2 or greater:
+
+```
+$ gpg --version | head -1
+gpg (GnuPG/MacGPG2) 2.0.28
+$ gpg-agent --version | head -1
+gpg-agent (GnuPG) 2.0.29
+```
+
+If you don't have GPG version 2, install [GPG Tools](https://gpgtools.org/). GPG Tools installs into the `/usr/local/MacGPG2/bin` directory, so add that to your shell's `$PATH` variable. Then, make sure you have a `gpg-agent` running in daemon mode:
+
+```
+$ gpg-agent --daemon
+```
+
+Finally, configure `gpg` to use the agent:
+
+```
+$ echo use-agent >> ~/.gnupg/gpg.conf
+```
 
 ## Install
 
 This is the easy way; do this unless you definitely need to [build from source](#source). Supported platforms:
 
-- [OSX](https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64)
+- [OSX](https://github.com/whilp/envcrypt/releases/download/v0.3/envcrypt-Darwin-x86_64)
 
 ```console
-$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64
-$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.1/envcrypt-Darwin-x86_64.sha265
+$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.3/envcrypt-Darwin-x86_64
+$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.3/envcrypt-Darwin-x86_64.sha265
 $ shasum -c envcrypt-Darwin-x86_64.sha256
 envcrypt-Darwin-x86_64: OK
 $ mv envcrypt-Darwin-x86_64 ~/bin/envcrypt

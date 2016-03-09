@@ -56,7 +56,7 @@ This is the easy way; do this unless you definitely need to [build from source](
 
 ```console
 $ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.3/envcrypt-Darwin-x86_64
-$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.3/envcrypt-Darwin-x86_64.sha265
+$ curl -sL -O https://github.com/whilp/envcrypt/releases/download/v0.3/envcrypt-Darwin-x86_64.sha256
 $ shasum -c envcrypt-Darwin-x86_64.sha256
 envcrypt-Darwin-x86_64: OK
 $ mv envcrypt-Darwin-x86_64 ~/bin/envcrypt
